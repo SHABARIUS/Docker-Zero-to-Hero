@@ -9,6 +9,12 @@ COPY . /app
 # Install the necessary packages
 RUN apt-get update && apt-get install -y python3 python3-pip
 
+# Debug: List contents of /app
+RUN ls -la /app
+
+# Debug: List contents of /app/examples/first-docker-file
+RUN ls -la /app/examples/first-docker-file
+
 # Set environment variables
 ENV NAME World
 
