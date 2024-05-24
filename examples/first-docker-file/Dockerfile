@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y python3 python3-pip
 ENV NAME World
 
 # Set the correct working directory if the app.py is in a nested directory
-WORKDIR /app/example/first-docker-file
+WORKDIR /example/first-docker-file/app
 
 # Run a command to start the application
 CMD ["python3", "app.py"]
