@@ -19,7 +19,7 @@ RUN ls -la /app/examples/first-docker-file
 ENV NAME World
 
 # Set the correct working directory if the app.py is in a nested directory
-WORKDIR /app/examples/first-docker-file
+WORKDIR /doss/examples/first-docker-file
 
 # Run a command to start the application
 CMD ["python3", "app.py"]
