@@ -14,8 +14,14 @@ RUN python3 -m venv /app/venv
 # Activate the virtual environment and install requirements
 RUN /app/venv/bin/pip install -r requirements.txt
 
+# Debug: List contents of /app/examples/first-docker-file
+RUN ls -la /app/doss/examples/python-web-app
+
 # Set environment variables to use the virtual environment
 ENV PATH="/app/venv/bin:$PATH"
+
+# Set the correct working directory if the app.py is in a nested directory
+WORKDIR /app/doss/examples/python-web-app
 
 ENTRYPOINT ["python3"]
 CMD ["manage.py", "runserver", "0.0.0.0:8000"]
