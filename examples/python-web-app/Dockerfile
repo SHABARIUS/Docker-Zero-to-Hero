@@ -1,9 +1,8 @@
-FROM ubuntu
+FROM ubuntu:latest
 
 WORKDIR /app
 
-COPY requirements.txt /app
-COPY devops /app
+COPY requirements.txt devops/ /app/
 
 # Install Python, pip, and venv
 RUN apt-get update && \
@@ -20,7 +19,3 @@ ENV PATH="/app/venv/bin:$PATH"
 
 ENTRYPOINT ["python3"]
 CMD ["manage.py", "runserver", "0.0.0.0:8000"]
-
-
-
-
